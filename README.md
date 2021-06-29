@@ -1,1 +1,2 @@
 # PizzaDeliveryService
+This assignment required me to create a software that allowed a pizza company to keep track of their pizzas. They had an inventory of ingredients that could be added to or removed from. Ingredients in this inventory could then be added to a pizza as a topping. New pizzas could be created and ingredients added to in the same fashion. Each pizzas contained and a toppings list that could be removed from. Each ingredient had data sauch as standard serving, energy, price and vegeterian. This data would be added and displayed on the piza.
