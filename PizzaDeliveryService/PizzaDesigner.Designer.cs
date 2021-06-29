@@ -29,17 +29,11 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this._ingredientsGrid = new System.Windows.Forms.DataGridView();
-            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.standardServingSizeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.energyValueDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.purchasePriceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.vegeterianDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.ingredientBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this._addIngredientButton = new System.Windows.Forms.Button();
             this._removePizzaButton = new System.Windows.Forms.Button();
             this._removeIngredientButton = new System.Windows.Forms.Button();
@@ -48,29 +42,35 @@
             this.label3 = new System.Windows.Forms.Label();
             this._removePizzaIngredientbutton = new System.Windows.Forms.Button();
             this._pizzaGrid = new System.Windows.Forms.DataGridView();
-            this.nameDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.IngredientsCount = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Energy = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.vegeterianDataGridViewCheckBoxColumn2 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.PurchasePrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.pizzaBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this._addedIngredientsGrid = new System.Windows.Forms.DataGridView();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.nameDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.vegeterianDataGridViewCheckBoxColumn2 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.pizzaBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.nameDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.standardServingSizeDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.energyValueDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.purchasePriceDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.vegeterianDataGridViewCheckBoxColumn1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.ingredientBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.standardServingSizeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.energyValueDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.purchasePriceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.vegeterianDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.pizzaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this._ingredientsGrid)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ingredientBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this._pizzaGrid)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pizzaBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this._addedIngredientsGrid)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pizzaBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ingredientBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pizzaBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -86,62 +86,15 @@
             this.vegeterianDataGridViewCheckBoxColumn});
             this._ingredientsGrid.DataSource = this.ingredientBindingSource;
             this._ingredientsGrid.Dock = System.Windows.Forms.DockStyle.Fill;
-            this._ingredientsGrid.Location = new System.Drawing.Point(422, 29);
+            this._ingredientsGrid.Location = new System.Drawing.Point(594, 29);
             this._ingredientsGrid.Margin = new System.Windows.Forms.Padding(2);
             this._ingredientsGrid.Name = "_ingredientsGrid";
             this._ingredientsGrid.RowHeadersWidth = 51;
             this._ingredientsGrid.RowTemplate.Height = 24;
-            this._ingredientsGrid.Size = new System.Drawing.Size(417, 247);
+            this._ingredientsGrid.Size = new System.Drawing.Size(589, 247);
             this._ingredientsGrid.TabIndex = 0;
             this._ingredientsGrid.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this._ingredientsGrid_CellFormatting);
             this._ingredientsGrid.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this._ingredientsGrid_CellValueChanged);
-            // 
-            // nameDataGridViewTextBoxColumn
-            // 
-            this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
-            this.nameDataGridViewTextBoxColumn.HeaderText = "Name";
-            this.nameDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
-            this.nameDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // standardServingSizeDataGridViewTextBoxColumn
-            // 
-            this.standardServingSizeDataGridViewTextBoxColumn.DataPropertyName = "StandardServingSize";
-            this.standardServingSizeDataGridViewTextBoxColumn.HeaderText = "Standard Serving";
-            this.standardServingSizeDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.standardServingSizeDataGridViewTextBoxColumn.Name = "standardServingSizeDataGridViewTextBoxColumn";
-            this.standardServingSizeDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // energyValueDataGridViewTextBoxColumn
-            // 
-            this.energyValueDataGridViewTextBoxColumn.DataPropertyName = "EnergyValue";
-            this.energyValueDataGridViewTextBoxColumn.HeaderText = "Energy";
-            this.energyValueDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.energyValueDataGridViewTextBoxColumn.Name = "energyValueDataGridViewTextBoxColumn";
-            this.energyValueDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // purchasePriceDataGridViewTextBoxColumn
-            // 
-            this.purchasePriceDataGridViewTextBoxColumn.DataPropertyName = "PurchasePrice";
-            dataGridViewCellStyle1.Format = "C2";
-            dataGridViewCellStyle1.NullValue = null;
-            this.purchasePriceDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle1;
-            this.purchasePriceDataGridViewTextBoxColumn.HeaderText = "Price";
-            this.purchasePriceDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.purchasePriceDataGridViewTextBoxColumn.Name = "purchasePriceDataGridViewTextBoxColumn";
-            this.purchasePriceDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // vegeterianDataGridViewCheckBoxColumn
-            // 
-            this.vegeterianDataGridViewCheckBoxColumn.DataPropertyName = "Vegeterian";
-            this.vegeterianDataGridViewCheckBoxColumn.HeaderText = "Vegeterian";
-            this.vegeterianDataGridViewCheckBoxColumn.MinimumWidth = 6;
-            this.vegeterianDataGridViewCheckBoxColumn.Name = "vegeterianDataGridViewCheckBoxColumn";
-            this.vegeterianDataGridViewCheckBoxColumn.Width = 125;
-            // 
-            // ingredientBindingSource
-            // 
-            this.ingredientBindingSource.DataSource = typeof(PizzaDeliveryService.Ingredient);
             // 
             // _addIngredientButton
             // 
@@ -149,7 +102,7 @@
             this._addIngredientButton.Location = new System.Drawing.Point(36, 17);
             this._addIngredientButton.Margin = new System.Windows.Forms.Padding(2);
             this._addIngredientButton.Name = "_addIngredientButton";
-            this._addIngredientButton.Size = new System.Drawing.Size(375, 44);
+            this._addIngredientButton.Size = new System.Drawing.Size(547, 44);
             this._addIngredientButton.TabIndex = 3;
             this._addIngredientButton.Text = "Add Ingredient";
             this._addIngredientButton.UseVisualStyleBackColor = true;
@@ -161,7 +114,7 @@
             this._removePizzaButton.Location = new System.Drawing.Point(36, 161);
             this._removePizzaButton.Margin = new System.Windows.Forms.Padding(2);
             this._removePizzaButton.Name = "_removePizzaButton";
-            this._removePizzaButton.Size = new System.Drawing.Size(375, 44);
+            this._removePizzaButton.Size = new System.Drawing.Size(547, 44);
             this._removePizzaButton.TabIndex = 4;
             this._removePizzaButton.Text = "Remove Pizza";
             this._removePizzaButton.UseVisualStyleBackColor = true;
@@ -173,7 +126,7 @@
             this._removeIngredientButton.Location = new System.Drawing.Point(36, 113);
             this._removeIngredientButton.Margin = new System.Windows.Forms.Padding(2);
             this._removeIngredientButton.Name = "_removeIngredientButton";
-            this._removeIngredientButton.Size = new System.Drawing.Size(375, 44);
+            this._removeIngredientButton.Size = new System.Drawing.Size(547, 44);
             this._removeIngredientButton.TabIndex = 5;
             this._removeIngredientButton.Text = "Remove Ingredient";
             this._removeIngredientButton.UseVisualStyleBackColor = true;
@@ -184,7 +137,7 @@
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(175, 1);
+            this.label1.Location = new System.Drawing.Point(261, 1);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(69, 24);
@@ -196,7 +149,7 @@
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(558, 1);
+            this.label2.Location = new System.Drawing.Point(816, 1);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(144, 24);
@@ -208,7 +161,7 @@
             this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(133, 279);
+            this.label3.Location = new System.Drawing.Point(219, 279);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(153, 24);
@@ -222,7 +175,7 @@
             this._removePizzaIngredientbutton.Location = new System.Drawing.Point(36, 66);
             this._removePizzaIngredientbutton.Margin = new System.Windows.Forms.Padding(2);
             this._removePizzaIngredientbutton.Name = "_removePizzaIngredientbutton";
-            this._removePizzaIngredientbutton.Size = new System.Drawing.Size(375, 44);
+            this._removePizzaIngredientbutton.Size = new System.Drawing.Size(547, 44);
             this._removePizzaIngredientbutton.TabIndex = 9;
             this._removePizzaIngredientbutton.Text = "Remove Pizza Topping";
             this._removePizzaIngredientbutton.UseVisualStyleBackColor = true;
@@ -247,18 +200,10 @@
             this._pizzaGrid.Name = "_pizzaGrid";
             this._pizzaGrid.RowHeadersWidth = 51;
             this._pizzaGrid.RowTemplate.Height = 24;
-            this._pizzaGrid.Size = new System.Drawing.Size(416, 247);
+            this._pizzaGrid.Size = new System.Drawing.Size(588, 247);
             this._pizzaGrid.TabIndex = 10;
             this._pizzaGrid.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this._pizzaGrid_CellFormatting);
             this._pizzaGrid.SelectionChanged += new System.EventHandler(this._pizzaGrid_SelectionChanged_1);
-            // 
-            // nameDataGridViewTextBoxColumn1
-            // 
-            this.nameDataGridViewTextBoxColumn1.DataPropertyName = "Name";
-            this.nameDataGridViewTextBoxColumn1.HeaderText = "Name";
-            this.nameDataGridViewTextBoxColumn1.MinimumWidth = 6;
-            this.nameDataGridViewTextBoxColumn1.Name = "nameDataGridViewTextBoxColumn1";
-            this.nameDataGridViewTextBoxColumn1.Width = 125;
             // 
             // IngredientsCount
             // 
@@ -277,15 +222,6 @@
             this.Energy.Name = "Energy";
             this.Energy.ReadOnly = true;
             this.Energy.Width = 125;
-            // 
-            // vegeterianDataGridViewCheckBoxColumn2
-            // 
-            this.vegeterianDataGridViewCheckBoxColumn2.DataPropertyName = "Vegeterian";
-            this.vegeterianDataGridViewCheckBoxColumn2.HeaderText = "Vegeterian";
-            this.vegeterianDataGridViewCheckBoxColumn2.MinimumWidth = 6;
-            this.vegeterianDataGridViewCheckBoxColumn2.Name = "vegeterianDataGridViewCheckBoxColumn2";
-            this.vegeterianDataGridViewCheckBoxColumn2.ReadOnly = true;
-            this.vegeterianDataGridViewCheckBoxColumn2.Width = 125;
             // 
             // PurchasePrice
             // 
@@ -309,10 +245,6 @@
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
             this.dataGridViewTextBoxColumn1.Width = 125;
             // 
-            // pizzaBindingSource1
-            // 
-            this.pizzaBindingSource1.DataSource = typeof(PizzaDeliveryService.Pizza);
-            // 
             // _addedIngredientsGrid
             // 
             this._addedIngredientsGrid.AutoGenerateColumns = false;
@@ -331,9 +263,71 @@
             this._addedIngredientsGrid.ReadOnly = true;
             this._addedIngredientsGrid.RowHeadersWidth = 51;
             this._addedIngredientsGrid.RowTemplate.Height = 24;
-            this._addedIngredientsGrid.Size = new System.Drawing.Size(416, 249);
+            this._addedIngredientsGrid.Size = new System.Drawing.Size(588, 249);
             this._addedIngredientsGrid.TabIndex = 11;
             this._addedIngredientsGrid.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this._addedIngredientsGrid_CellFormatting);
+            // 
+            // tableLayoutPanel1
+            // 
+            this.tableLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tableLayoutPanel1.ColumnCount = 2;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.Controls.Add(this.panel1, 1, 3);
+            this.tableLayoutPanel1.Controls.Add(this._pizzaGrid, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this._addedIngredientsGrid, 0, 3);
+            this.tableLayoutPanel1.Controls.Add(this._ingredientsGrid, 1, 1);
+            this.tableLayoutPanel1.Controls.Add(this.label2, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.label3, 0, 2);
+            this.tableLayoutPanel1.Controls.Add(this.label1, 0, 0);
+            this.tableLayoutPanel1.GrowStyle = System.Windows.Forms.TableLayoutPanelGrowStyle.FixedSize;
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(2, 0);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(2);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 4;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 45F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 45F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1185, 558);
+            this.tableLayoutPanel1.TabIndex = 12;
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this._addIngredientButton);
+            this.panel1.Controls.Add(this._removeIngredientButton);
+            this.panel1.Controls.Add(this._removePizzaIngredientbutton);
+            this.panel1.Controls.Add(this._removePizzaButton);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Location = new System.Drawing.Point(594, 307);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(589, 249);
+            this.panel1.TabIndex = 13;
+            this.panel1.Resize += new System.EventHandler(this.panel1_Resize);
+            // 
+            // nameDataGridViewTextBoxColumn1
+            // 
+            this.nameDataGridViewTextBoxColumn1.DataPropertyName = "Name";
+            this.nameDataGridViewTextBoxColumn1.HeaderText = "Name";
+            this.nameDataGridViewTextBoxColumn1.MinimumWidth = 6;
+            this.nameDataGridViewTextBoxColumn1.Name = "nameDataGridViewTextBoxColumn1";
+            this.nameDataGridViewTextBoxColumn1.Width = 125;
+            // 
+            // vegeterianDataGridViewCheckBoxColumn2
+            // 
+            this.vegeterianDataGridViewCheckBoxColumn2.DataPropertyName = "Vegeterian";
+            this.vegeterianDataGridViewCheckBoxColumn2.HeaderText = "Vegeterian";
+            this.vegeterianDataGridViewCheckBoxColumn2.MinimumWidth = 6;
+            this.vegeterianDataGridViewCheckBoxColumn2.Name = "vegeterianDataGridViewCheckBoxColumn2";
+            this.vegeterianDataGridViewCheckBoxColumn2.ReadOnly = true;
+            this.vegeterianDataGridViewCheckBoxColumn2.Width = 125;
+            // 
+            // pizzaBindingSource1
+            // 
+            this.pizzaBindingSource1.DataSource = typeof(PizzaDeliveryService.Pizza);
             // 
             // nameDataGridViewTextBoxColumn2
             // 
@@ -382,46 +376,52 @@
             this.vegeterianDataGridViewCheckBoxColumn1.ReadOnly = true;
             this.vegeterianDataGridViewCheckBoxColumn1.Width = 125;
             // 
-            // tableLayoutPanel1
+            // ingredientBindingSource
             // 
-            this.tableLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.tableLayoutPanel1.ColumnCount = 2;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Controls.Add(this.panel1, 1, 3);
-            this.tableLayoutPanel1.Controls.Add(this._pizzaGrid, 0, 1);
-            this.tableLayoutPanel1.Controls.Add(this._addedIngredientsGrid, 0, 3);
-            this.tableLayoutPanel1.Controls.Add(this._ingredientsGrid, 1, 1);
-            this.tableLayoutPanel1.Controls.Add(this.label2, 1, 0);
-            this.tableLayoutPanel1.Controls.Add(this.label3, 0, 2);
-            this.tableLayoutPanel1.Controls.Add(this.label1, 0, 0);
-            this.tableLayoutPanel1.GrowStyle = System.Windows.Forms.TableLayoutPanelGrowStyle.FixedSize;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(2, 0);
-            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(2);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 4;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 45F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 45F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(841, 558);
-            this.tableLayoutPanel1.TabIndex = 12;
+            this.ingredientBindingSource.DataSource = typeof(PizzaDeliveryService.Ingredient);
             // 
-            // panel1
+            // nameDataGridViewTextBoxColumn
             // 
-            this.panel1.Controls.Add(this._addIngredientButton);
-            this.panel1.Controls.Add(this._removeIngredientButton);
-            this.panel1.Controls.Add(this._removePizzaIngredientbutton);
-            this.panel1.Controls.Add(this._removePizzaButton);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(422, 307);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(417, 249);
-            this.panel1.TabIndex = 13;
-            this.panel1.Resize += new System.EventHandler(this.panel1_Resize);
+            this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
+            this.nameDataGridViewTextBoxColumn.HeaderText = "Name";
+            this.nameDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
+            this.nameDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // standardServingSizeDataGridViewTextBoxColumn
+            // 
+            this.standardServingSizeDataGridViewTextBoxColumn.DataPropertyName = "StandardServingSize";
+            this.standardServingSizeDataGridViewTextBoxColumn.HeaderText = "Standard Serving";
+            this.standardServingSizeDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.standardServingSizeDataGridViewTextBoxColumn.Name = "standardServingSizeDataGridViewTextBoxColumn";
+            this.standardServingSizeDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // energyValueDataGridViewTextBoxColumn
+            // 
+            this.energyValueDataGridViewTextBoxColumn.DataPropertyName = "EnergyValue";
+            this.energyValueDataGridViewTextBoxColumn.HeaderText = "Energy";
+            this.energyValueDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.energyValueDataGridViewTextBoxColumn.Name = "energyValueDataGridViewTextBoxColumn";
+            this.energyValueDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // purchasePriceDataGridViewTextBoxColumn
+            // 
+            this.purchasePriceDataGridViewTextBoxColumn.DataPropertyName = "PurchasePrice";
+            dataGridViewCellStyle1.Format = "C2";
+            dataGridViewCellStyle1.NullValue = null;
+            this.purchasePriceDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle1;
+            this.purchasePriceDataGridViewTextBoxColumn.HeaderText = "Price";
+            this.purchasePriceDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.purchasePriceDataGridViewTextBoxColumn.Name = "purchasePriceDataGridViewTextBoxColumn";
+            this.purchasePriceDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // vegeterianDataGridViewCheckBoxColumn
+            // 
+            this.vegeterianDataGridViewCheckBoxColumn.DataPropertyName = "Vegeterian";
+            this.vegeterianDataGridViewCheckBoxColumn.HeaderText = "Vegeterian";
+            this.vegeterianDataGridViewCheckBoxColumn.MinimumWidth = 6;
+            this.vegeterianDataGridViewCheckBoxColumn.Name = "vegeterianDataGridViewCheckBoxColumn";
+            this.vegeterianDataGridViewCheckBoxColumn.Width = 125;
             // 
             // pizzaBindingSource
             // 
@@ -431,21 +431,21 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(840, 561);
+            this.ClientSize = new System.Drawing.Size(1184, 561);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Margin = new System.Windows.Forms.Padding(2);
-            this.MinimumSize = new System.Drawing.Size(379, 414);
+            this.MinimumSize = new System.Drawing.Size(1200, 600);
             this.Name = "PizzaDesigner";
             this.StartPosition = System.Windows.Forms.FormStartPosition.WindowsDefaultBounds;
             this.Text = "PizzaDesigner";
             ((System.ComponentModel.ISupportInitialize)(this._ingredientsGrid)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ingredientBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this._pizzaGrid)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pizzaBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this._addedIngredientsGrid)).EndInit();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pizzaBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ingredientBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pizzaBindingSource)).EndInit();
             this.ResumeLayout(false);
 

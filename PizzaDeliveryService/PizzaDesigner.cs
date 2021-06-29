@@ -12,9 +12,7 @@ namespace PizzaDeliveryService
         // ### Instance Variables ###
         /// The list of every ingredient. Is the data source of _ingredientGrid
         private BindingList<Ingredient> _ingredient;
-        /// <summary>
         /// The list of every pizza. Is the data source of _pizzaGrid
-        /// </summary>
         private BindingList<Pizza> _pizza;
 
         //########################################################
@@ -33,26 +31,33 @@ namespace PizzaDeliveryService
 
             //Creates ingredient list
             _ingredient = new BindingList<Ingredient>();
+
             // Read ingredients from file and add to ingredient list
             StreamReader inputFile;
             inputFile = File.OpenText("ingredients.csv");
             inputFile.ReadLine();
-            // While file isn't at the end
-            while (!inputFile.EndOfStream)
-            {
-                //Read line to string
+
+            // Read each line of csv, creating ingredient object and adding to list
+            while (!inputFile.EndOfStream) {
                 string line = inputFile.ReadLine();
-                // Split line at "," into array
-                char[] delim = { ',' };
-                string[] tokens = line.Split(delim);
-                // Add ingredients from array to ingredient list
-                _ingredient.Add(new Ingredient(tokens[0], double.Parse(tokens[1]), double.Parse(tokens[2]), decimal.Parse(tokens[3]), bool.Parse(tokens[4])));
-                // Makes list
-                _ingredientsGrid.DataSource = _ingredient;
+                string[] tokens = line.Split(',');
+                _ingredient.Add(new Ingredient(tokens[0], double.Parse(tokens[1]), double.Parse(tokens[2]), 
+                    decimal.Parse(tokens[3]), bool.Parse(tokens[4])));               
             }
-            // Close file
+
+            _ingredientsGrid.DataSource = _ingredient;
             inputFile.Close();
 
+            createDefaultPizzas();
+            RefreshPizzas();
+
+
+        }
+        //#######################################
+        // ### Private Methods ###
+
+
+        private void createDefaultPizzas() {
             // Add ingredients to Hawaiian pizza
             Pizza Hawaiian = _pizza[0];
             //Add thin base
@@ -99,33 +104,15 @@ namespace PizzaDeliveryService
             // Add Spinach
             ingredient = _ingredient[15];
             Anchovie.AddIngredient(ingredient);
-
-            //Updates vegeterian, energy, and price of all pizzas
-            foreach (Pizza p in _pizza)
-            {
-                p.RefreshEnergyValue();
-                p.RefreshPurchasePrice();
-                p.CheckVego();
-            }
-
         }
-        //#######################################
-        // ### Private Methods ###
-        /// <summary>
+
         /// Get index of currently selected pizza
-        /// </summary>
-        /// <returns></returns>
-        private Pizza GetSelectedPizza()
-        {
+        private Pizza GetSelectedPizza() {
             Pizza pizza = null;
-            foreach (DataGridViewCell cell in _pizzaGrid.SelectedCells)
-            {
-                if (cell.Value == null)
-                {
-                    MessageBox.Show("Please select a pizza.");
-                }
-                else
-                {
+            foreach (DataGridViewCell cell in _pizzaGrid.SelectedCells) {
+                if (cell.Value == null) 
+                    MessageBox.Show("Please select a pizza.");               
+                else {
                     DataGridViewCell pizzaCell = _pizzaGrid.CurrentCell;
                     int pizzaIndex = pizzaCell.RowIndex;
                     pizza = _pizza[pizzaIndex];
@@ -133,25 +120,25 @@ namespace PizzaDeliveryService
             }
             return pizza;
         }
-        public void RefreshPizza()
-        {
+
+        public void RefreshPizzas() {            
+            //Updates vegeterian, energy, and price of all pizzas
+            foreach (Pizza p in _pizza) {
+                p.RefreshEnergyValue();
+                p.RefreshPurchasePrice();
+                p.CheckVego();
+            }
 
         }
-        /// <summary>
         /// This allows you to get the object of the ingredient that you have currently selected.
-        /// </summary>
-        /// <returns></returns>
         private Ingredient GetSelectedIngredient()
         {
             // Object set to null so if there is an error it will pass back null for easy differentiation between error and non error
             Ingredient ingredient = null;
-            // Loops through cells selected. If the sell is empty, then will show error and return null
-            // If not then will get the current cells row index and give that index to the list in which it will
-            // give the object of the same index to the object variable we have created and return it.
-            foreach (DataGridViewCell cell in _ingredientsGrid.SelectedCells)
-            {
-                if (cell.Value != null)
-                {
+
+
+            foreach (DataGridViewCell cell in _ingredientsGrid.SelectedCells) {
+                if (cell.Value != null) {
                     DataGridViewCell ingredientCell = _ingredientsGrid.CurrentCell;
                     int ingredientIndex = ingredientCell.RowIndex;
                     ingredient = _ingredient[ingredientIndex];
@@ -190,12 +177,9 @@ namespace PizzaDeliveryService
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void removePizzaButton_Click(object sender, EventArgs e)
-        {
-            foreach (DataGridViewCell cell in _pizzaGrid.SelectedCells)
-            {
-                if (cell.Value == null)
-                {
+        private void removePizzaButton_Click(object sender, EventArgs e) {
+            foreach (DataGridViewCell cell in _pizzaGrid.SelectedCells) {
+                if (cell.Value == null) {
                     MessageBox.Show("Please Select a pizza.");
                     return;
                 }
@@ -213,16 +197,13 @@ namespace PizzaDeliveryService
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void removeIngredientButton_Click(object sender, EventArgs e)
-        {
-            //store selected ingredient
-            Ingredient ingredient = GetSelectedIngredient();
+        private void removeIngredientButton_Click(object sender, EventArgs e) {
+            
+            Ingredient selectedIngredients = GetSelectedIngredient();
             //loop through selected cells
-            foreach (DataGridViewCell cell in _ingredientsGrid.SelectedCells)
-            {
+            foreach (DataGridViewCell cell in _ingredientsGrid.SelectedCells) {
                 //if cell is empty, throw error and return
-                if (cell.Value == null)
-                {
+                if (cell.Value == null) {
                     MessageBox.Show("Please select an ingredient.");
                     return;
                 }
@@ -230,9 +211,8 @@ namespace PizzaDeliveryService
                 _ingredientsGrid.Rows.RemoveAt(cell.RowIndex);
             }
             // loop through pizzas in _pizza list
-            foreach (Pizza p in _pizza)
-            {
-                p.CompareIngredients(ingredient, p);
+            foreach (Pizza p in _pizza) {
+                p.CompareIngredients(selectedIngredients, p);
                 p.CheckVego();
                 p.RefreshEnergyValue();
                 p.RefreshPurchasePrice();
@@ -296,8 +276,8 @@ namespace PizzaDeliveryService
             {
                 int pizzaIndex = cell.RowIndex;
                 Pizza pizza = _pizza[pizzaIndex];
-                // Call the Bind() method, to change the data source of the enrolments
-                // data grid view (the argument) to the paper's list of enrolled students
+                // Call the Bind() method, to change the data source
+                // data grid view (the argument) 
                 pizza.Bind(_addedIngredientsGrid);
 
             }
@@ -334,13 +314,13 @@ namespace PizzaDeliveryService
         /// <param name="e"></param>
         private void panel1_Resize(object sender, EventArgs e)
         {
-            int yLocation;
-            yLocation = panel1.Height / 100;
+            
+            int yLocation = panel1.Height / 100;
 
             _addIngredientButton.Location = new Point(_addIngredientButton.Location.X, yLocation);
-            _removePizzaIngredientbutton.Location = new Point(_removePizzaIngredientbutton.Location.X, (yLocation * 33));
-            _removeIngredientButton.Location = new Point(_removeIngredientButton.Location.X, (yLocation * 66));
-            _removePizzaButton.Location = new Point(_removePizzaButton.Location.X, (yLocation * 99));
+            _removePizzaIngredientbutton.Location = new Point(_removePizzaIngredientbutton.Location.X, (yLocation * 30));
+            _removeIngredientButton.Location = new Point(_removeIngredientButton.Location.X, (yLocation * 60));
+            _removePizzaButton.Location = new Point(_removePizzaButton.Location.X, (yLocation * 90));
 
         }
         /// <summary>
